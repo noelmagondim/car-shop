@@ -2,7 +2,6 @@ import * as sinon from 'sinon';
 import chai from 'chai';
 const { expect } = chai;
 import { Model } from 'mongoose';
-import { ErrorTypes } from '../../../errors/catalog';
 import CarModel from '../../../models/CarModel';
 import { ICar } from '../../../interfaces/ICar';
 
@@ -35,7 +34,7 @@ describe('Camada CarModel.ts', () => {
   after(()=>{
     sinon.restore();
   })
-
+  
   it('Criando carro', async () => {
     const result = await carModel.create(carTest);
     expect(result).to.be.deep.equal(carWithIdTest);
